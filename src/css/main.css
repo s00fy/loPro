@@ -1,0 +1,85 @@
+@import url(./reset.css);
+
+/* #region menu */
+
+.header{
+
+}
+/* #endregion */
+
+.body{
+    display: flex;
+    justify-content: center;
+}
+
+/* #region contenu principal */
+.main{
+    background-color: #f5f5f5;    
+    max-width: 800px;
+    width:800px;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+code{
+    vertical-align: baseline;
+    /* background-color: #c0adad;
+    padding: 1rem;
+    border-radius: 3px; */
+}
+
+/* #endregion */
+
+/* #region readingDir */
+.readingDir{
+    padding: 2rem 0;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+/* #endregion */
+
+/* #region hero */
+.hero{
+    padding: 0.5rem 0.5rem 2rem;
+    text-align: center;
+}
+
+.hero__title{
+    font-size: 3.5rem;
+    padding: 1rem;
+}
+.hero__small{
+    font-size: 0.8rem;
+    font-style: italic;
+
+}
+/* #endregion */
+
+/* #region contenu pour le test de components */
+
+.background{
+    background: #F6c54e;
+    inline-size: 130px;
+    block-size: 180px;
+    padding: 5px;
+    border-inline-start: 6px solid;
+    padding-inline: 10px 15px;
+    position:relative;
+    border-end-end-radius: 10px;
+    border-start-end-radius: 10px;
+}
+
+.delimitation{
+    display:block;
+    position:absolute;
+    inset-block-end: 0;
+    inline-size: 80px;
+    border-block-start: 3px dotted black;
+}
+.footer{
+    font-style:italic;
+    color: purple;
+}
+
+  /* #endregion */

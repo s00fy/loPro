@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical properties</title>
+    <link href="src/css/main.css" rel="stylesheet" type="text/css" />
+    <script src="src/js/content.js" type="text/javascript" defer></script>
+</head>
+<body class="body">
+    <header>
+
+    </header>
+    
+    <main class="main">
+        <section class="hero">
+            <h1 class="hero__title">Logical properties</h1>
+            <p class="hero__small">Parce que le monde tourne autour de nous, mais pas trop quand même</p>
+        </section>
+
+        <section class="tableContents">
+            <span>Sommaire</span>
+            <ul>
+                <li>Sens de lecture</li>
+            </ul>
+        </section>
+
+        <section class="readingDir">
+            <h2>Sens de lecture</h2>
+            <p>
+                Les logical properties servent à rendre le code 
+                plus léger en le rendant plus <span>logique</span>.
+                Elles permettent aux éléments de suivre le sens
+                de lecture assigné par la langue utilisée.
+            </p>
+            <!-- Hop là petite démonstration à l'aide d'un web components -->
+
+            <p>
+                Bon bah là je raconte ma vie je suppose ??
+            </p>
+            <!-- Le code qu'il aurait fallu mettre sans -->
+            <pre class="language-css">
+                <code>
+    .avatar {
+        margin-right: 1rem;
+    }
+
+    html[dir="rtl"] .avatar {
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+                </code>
+            </pre>
+            <!-- Le code qu'on peut mettre avec -->
+            <pre class="language-css">
+                <code>
+    .avatar {
+        margin-inline-end: 1rem;
+    }
+                </code>
+            </pre>
+        </section>
+
+        <section class="test">
+        <div>
+            <button id="fr"> french </button>
+            <button id="ar"> arabic </button>
+            <button id="ja"> japanese </button>
+            <button id="ch"> chinese </button>
+        </div>
+
+        <div lang="fr" class="background">
+            <p class="content">some content to fill in the void in my life</p>
+            <div class="delimitation">
+              <p class="footer">Bas de page</p>
+            </div>
+          </div>
+        </section>
+        
+        <!-- <section class="test">
+            <template id="content-lang">
+                <style>
+                    .background{
+                        background: #F6c54e;
+                        inline-size: 130px;
+                        block-size: 180px;
+                        padding: 5px;
+                        border-inline-start: 6px solid;
+                        padding-inline: 10px 15px;
+                        border-radius: end;
+                        position:relative;
+                        border-end-end-radius: 10px;
+                        border-start-end-radius: 10px;
+                    }
+
+                    .delimitation{
+                        display:block;
+                        position:absolute;
+                        inset-block-end: 0;
+                        inline-size: 80px;
+                        border-block-start: 3px dotted black;
+                    }
+                    .footer{
+                        font-style:italic;
+                        color: purple;
+                    }
+                  </style>
+                <div>
+                    <slot name="container"></slot>
+                    <slot name="delimitation"></slot>
+                    <slot name="footer"></slot>
+                </div>
+            </template>
+
+            <content-lang>
+                <div slot="container" id="container">
+                    <p>some K?CJPOFEJPEFPJ to fill in the void in my life</p>
+                    <div slot="delimitation">
+                        <span slot="footer">Bas de page</span>
+                    </div>
+                </div>
+            </content-lang>
+        </section> -->
+    </main>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>
