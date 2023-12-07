@@ -77,51 +77,48 @@
             </div>
           </div>
         </section>
-        
-        <!-- <section class="test">
+
+        <section class="test">
             <template id="content-lang">
                 <style>
-                    .background{
+                    ::slotted(div){
                         background: #F6c54e;
                         inline-size: 130px;
                         block-size: 180px;
                         padding: 5px;
                         border-inline-start: 6px solid;
                         padding-inline: 10px 15px;
-                        border-radius: end;
                         position:relative;
                         border-end-end-radius: 10px;
                         border-start-end-radius: 10px;
                     }
 
-                    .delimitation{
+                    span{
                         display:block;
                         position:absolute;
                         inset-block-end: 0;
                         inline-size: 80px;
                         border-block-start: 3px dotted black;
                     }
-                    .footer{
+                    p{
                         font-style:italic;
                         color: purple;
                     }
                   </style>
-                <div>
-                    <slot name="container"></slot>
-                    <slot name="delimitation"></slot>
+                <slot name="container"></slot>
+                <div class="delimitation">
+
                     <slot name="footer"></slot>
                 </div>
             </template>
 
             <content-lang>
-                <div slot="container" id="container">
-                    <p>some K?CJPOFEJPEFPJ to fill in the void in my life</p>
-                    <div slot="delimitation">
-                        <span slot="footer">Bas de page</span>
-                    </div>
+                <div slot="container">
+                    <bdi>some KCJPOFEJPEFPJ to fill in the void in my life</bdi>
+                    <p slot="footer">Bas de page</p>
                 </div>
             </content-lang>
-        </section> -->
+        </section>
     </main>
     
     <footer>

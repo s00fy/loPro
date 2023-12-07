@@ -89,6 +89,7 @@ pre[class*="language-"] {
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
+  border-radius: 5px;
 	color: #c3cee3;
 	background: #263238;
 	font-family: Roboto Mono, monospace;

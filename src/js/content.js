@@ -3,10 +3,10 @@ class contentLang extends HTMLElement {
         super();
 
         this.attachShadow({ mode: "open" });
-        const template = document.getElementById("content-lang").contents;
+        const template = document.getElementById("content-lang").content;
         this.shadowRoot.appendChild(template.cloneNode(true));
 
-        this.$details = this.shadowRoot.querySelector(".container");
+        //this.$details = this.shadowRoot.querySelector(".container");
 
         
     }

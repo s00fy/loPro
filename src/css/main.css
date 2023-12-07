@@ -1,5 +1,24 @@
 @import url(./reset.css);
 
+@font-face {
+    font-family: "Young Serif";
+    src:
+     local("Young Serif"),
+     url(../fonts/YoungSerif-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Outfit";
+    src:
+     local("Outfit"),
+     url(../fonts/Outfit-VariableFont_wght.ttf);
+}
+
+:root{
+    --title-font: Young Serif;
+    --font: Outfit;
+}
+
 /* #region menu */
 
 .header{
@@ -10,6 +29,13 @@
 .body{
     display: flex;
     justify-content: center;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+h1, h2, h3{
+    font-family: var(--title-font);
 }
 
 /* #region contenu principal */
@@ -39,14 +65,14 @@ code{
 }
 /* #endregion */
 
-/* #region hero */
+/* #region HERO */
 .hero{
     padding: 0.5rem 0.5rem 2rem;
     text-align: center;
 }
 
 .hero__title{
-    font-size: 3.5rem;
+    font-size: 3.3rem;
     padding: 1rem;
 }
 .hero__small{
@@ -83,3 +109,7 @@ code{
 }
 
   /* #endregion */
+
+slot[name=delimitation]{
+    background-color: red;
+}
