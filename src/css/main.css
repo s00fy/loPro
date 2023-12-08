@@ -14,7 +14,29 @@
      url(../fonts/Outfit-VariableFont_wght.ttf);
 }
 
+/* @font-face {
+    font-family: "Outfit";
+    src:
+     local("Outfit"),
+     url(../fonts/Outfit-ExtraBold.ttf);
+     font-weight: bold;
+} */
+
 :root{
+    /* SCSS HEX */
+    --mindaro: #ceec97ff;
+    --peach: #f4b393ff;
+    --hot-pink: #fc60a8ff;
+    --french-violet: #7a28cbff;
+    --english-violet: #494368ff;
+    --yellow: #FFFDBF;
+
+    --space-cadet: #22223bff;
+    --ultra-violet: #4a4e69ff;
+    --rose-quartz: #9a8c98ff;
+    --pale-dogwood: #c9ada7ff;
+    --isabelline: #f2e9e4ff;
+
     --title-font: Young Serif;
     --font: Outfit;
 }
@@ -63,6 +85,53 @@ code{
     gap: 25px;
     flex-direction: column;
 }
+
+.exemple__container{
+    background-color: var(--isabelline);
+    display: flex;
+    padding-inline-start: 25px;
+    padding-inline-end: 5px;
+    padding-block-start: 15px;
+    padding-block-end: 15px;
+    border-radius: 2px;
+    align-items: center;
+}
+
+.exemple__img{
+    display: block;
+    background-color: var(--rose-quartz);
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.exemple__margin
+{
+    display: block;
+    height: 50px;
+    width: 15px;
+    background: var(--pale-dogwood);
+}
+
+.readingDir__list__link{
+    color: var(--isabelline);
+    width: fit-content;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 16px;
+    background: var(--space-cadet);
+    border: unset;
+    transition: all 3ms ease-in;
+
+}
+
+.readingDir__list__link:focus{
+    transition: all 3ms ease-in;
+    color: var(--space-cadet);
+    background: transparent;
+    border: 1px solid var(--space-cadet);
+}
+
 /* #endregion */
 
 /* #region HERO */
@@ -83,6 +152,16 @@ code{
 /* #endregion */
 
 /* #region contenu pour le test de components */
+
+.text__highlight{
+    background-color: var(--isabelline);
+    border-radius: 2px;
+}
+
+.text__lowlight{
+    font-style: italic;
+    font-weight: 500;
+}
 
 .background{
     background: #F6c54e;

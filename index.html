@@ -35,9 +35,34 @@
                 de lecture assigné par la langue utilisée.
             </p>
             <!-- Hop là petite démonstration à l'aide d'un web components -->
+            <template id="displayPadding">
+                <style>
+                    ::slotted(.exemple__container) {
+                        background-color: #DE4c2f;
+                    }
+                </style>
+                <div>
+                    <slot name="exemple__container"></slot>
+                </div>
+            </template>
+            
+            <display-padding>
+                <div slot="exemple__container" class="exemple__container">
+                    <span class="exemple__img"></span>
+                    <span class="exemple__margin"></span>
+                    <p class="exemple__userContent">Infos de l'utilisateur</p>
+                </div>
+            </display-padding>
 
+            <display-padding>
+                <div slot="exemple__container" dir="rtl" class="exemple__container">
+                    <span class="exemple__img"></span>
+                    <span class="exemple__margin"></span>
+                    <p class="exemple__userContent">Infos de l'utilisateur</p>
+                </div>
+            </display-padding>
             <p>
-                Bon bah là je raconte ma vie je suppose ??
+                Pour avoir ce résultat, on va écrire :
             </p>
             <!-- Le code qu'il aurait fallu mettre sans -->
             <pre class="language-css">
@@ -49,19 +74,36 @@
     html[dir="rtl"] .avatar {
         margin-right: 0;
         margin-left: 1rem;
-    }
-                </code>
+    }</code>
             </pre>
             <!-- Le code qu'on peut mettre avec -->
+            <p>
+                A l'aide des <span class="text__highlight"> logical properties </span>, on peut mettre :
+            </p>
             <pre class="language-css">
                 <code>
     .avatar {
         margin-inline-end: 1rem;
-    }
-                </code>
+    }</code>
             </pre>
+            <p class="readingDir__list">
+                Les logical properties influent sur le : 
+                <span class="text__lowlight">
+                    margin
+                    padding
+                    sizing
+                    border-radius
+                    positionnement...
+                </span>
+            </p>
+            <a class="readingDir__list__link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#reference" target="_blank">Voir la liste complète</a>
         </section>
 
+        <section>
+
+        </section>
+
+        <!--#region test des webcomponents  -->
         <section class="test">
         <div>
             <button id="fr"> french </button>
@@ -119,6 +161,8 @@
                 </div>
             </content-lang>
         </section>
+        <!--#endregion -->
+
     </main>
     
     <footer>
