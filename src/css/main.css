@@ -78,12 +78,16 @@ code{
 
 /* #endregion */
 
-/* #region readingDir */
-.readingDir{
+/* #region contentDir */
+.section{
     padding: 2rem 0;
     display: flex;
     gap: 25px;
     flex-direction: column;
+}
+
+.section__title{
+    font-size: 1.5rem;
 }
 
 .exemple__container{
@@ -113,7 +117,7 @@ code{
     background: var(--pale-dogwood);
 }
 
-.readingDir__list__link{
+.contentDir__list__link{
     color: var(--isabelline);
     width: fit-content;
     padding: 5px 10px;
@@ -125,7 +129,7 @@ code{
 
 }
 
-.readingDir__list__link:focus{
+.contentDir__list__link:focus{
     transition: all 3ms ease-in;
     color: var(--space-cadet);
     background: transparent;
@@ -156,6 +160,8 @@ code{
 .text__highlight{
     background-color: var(--isabelline);
     border-radius: 2px;
+    /* text-decoration: none; */
+    color: var(--english-violet);
 }
 
 .text__lowlight{
@@ -173,6 +179,8 @@ code{
     position:relative;
     border-end-end-radius: 10px;
     border-start-end-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .delimitation{
@@ -192,3 +200,103 @@ code{
 slot[name=delimitation]{
     background-color: red;
 }
+
+/* #region reading */
+
+.reading .language-css{
+    line-height: 1.2rem;
+}
+
+.reading__output, .situation__output{
+    border-radius: 5px;
+	background: #263238;
+	font-size: 1em;
+	line-height: 1.5rem;
+    padding: 15px;
+    hyphens: none;
+}
+
+.reading__output p{
+    color: var(--isabelline);
+}
+
+.reading__output__exemple, .reading__output__exemple2
+{
+    position: relative;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    width: 80vw;
+    background-color: var(--mindaro);
+}
+
+.reading__output__exemple2{
+    height: 80px;
+    width: 25px;
+}
+
+.reading__output__exemple::before,
+.reading__output__exemple::after,
+.reading__output__exemple2::after,
+.reading__output__exemple2::before{
+    content: 'end';
+    color: var(--space-cadet);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: var(--peach);
+    inset-block-start: -14px;
+    border-radius: 25px;
+}
+
+.reading__output__exemple::after, .reading__output__exemple2::after{
+    inset-inline-end: -10px;
+}
+
+.reading__output__exemple::before, .reading__output__exemple2::before
+{
+    content: 'start';
+    right: auto;
+    inset-inline-start: -10px;
+}
+
+.reading__output__exemple2{
+    writing-mode: horizontal-tb;
+}
+
+.reading__output__exempleItem
+{
+    margin-inline-start: 50px;
+    background-color: red;
+    height: 10px;
+    width: 20px;
+    display: block;
+}
+
+.situation__output__buttons
+{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.situation__output__btn
+{
+    border: none;
+    background: var(--pale-dogwood);
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 3px 6px;
+}
+
+.situation__output__btn:focus
+{
+    background-color: var(--isabelline);
+}
+
+/* #endregion */

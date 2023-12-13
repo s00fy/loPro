@@ -1,18 +1,24 @@
-class displayPadding extends HTMLElement {
+class DisplayPadding extends HTMLElement {
     constructor() {
         super();
 
         this.attachShadow({ mode: "open" });
         const template = document.getElementById("display-padding").content;
         this.shadowRoot.appendChild(template.cloneNode(true));
+        if (template) {
 
-        //this.$details = this.shadowRoot.querySelector(".container");
+            this.containers = document.querySelectorAll(".exemple__container");
+            let count = 0;
+            this.containers.forEach(el => {
+                if (count % 2 === 1) {
+                    el.setAttribute('dir', 'rtl');
+                }
+                count++;
+            });
+        } else {
+            console.error("Template inexistant");
+        }
     }
-
-    disconnectedCallback() {
-    document.removeEventListener(this.keyDownEventListener);
-    }
-    
 }
 
-customElements.define("display-padding", displayPadding);
+customElements.define("display-padding", DisplayPadding);

@@ -7,6 +7,7 @@
     <title>Logical properties</title>
     <link href="src/css/main.css" rel="stylesheet" type="text/css" />
     <script src="src/js/content.js" type="text/javascript" defer></script>
+    <script src="src/js/displayPadding.js" type="text/javascript" defer></script>
 </head>
 <body class="body">
     <header>
@@ -25,17 +26,18 @@
                 <li>Sens de lecture</li>
             </ul>
         </section>
-
-        <section class="readingDir">
-            <h2>Sens de lecture</h2>
+        
+        <!-- #region introduction -->
+        <section class="contentDir section">
+            <h2 class="section__title">Introduction</h2>
             <p>
                 Les logical properties servent à rendre le code 
-                plus léger en le rendant plus <span>logique</span>.
+                plus léger en le rendant plus <mark>logique</mark>.
                 Elles permettent aux éléments de suivre le sens
                 de lecture assigné par la langue utilisée.
             </p>
             <!-- Hop là petite démonstration à l'aide d'un web components -->
-            <template id="displayPadding">
+            <template id="display-padding">
                 <style>
                     ::slotted(.exemple__container) {
                         background-color: #DE4c2f;
@@ -54,8 +56,8 @@
                 </div>
             </display-padding>
 
-            <display-padding>
-                <div slot="exemple__container" dir="rtl" class="exemple__container">
+            <display-padding> 
+                <div slot="exemple__container" class="exemple__container">
                     <span class="exemple__img"></span>
                     <span class="exemple__margin"></span>
                     <p class="exemple__userContent">Infos de l'utilisateur</p>
@@ -78,7 +80,7 @@
             </pre>
             <!-- Le code qu'on peut mettre avec -->
             <p>
-                A l'aide des <span class="text__highlight"> logical properties </span>, on peut mettre :
+                A l'aide des <mark class="text__highlight"> logical properties </mark>, on peut mettre :
             </p>
             <pre class="language-css">
                 <code>
@@ -86,7 +88,7 @@
         margin-inline-end: 1rem;
     }</code>
             </pre>
-            <p class="readingDir__list">
+            <p class="contentDir__list">
                 Les logical properties influent sur le : 
                 <span class="text__lowlight">
                     margin
@@ -96,15 +98,106 @@
                     positionnement...
                 </span>
             </p>
-            <a class="readingDir__list__link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#reference" target="_blank">Voir la liste complète</a>
+            <a class="contentDir__list__link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#reference" target="_blank">Voir la liste complète</a>
         </section>
+        <!-- #endregion -->
 
-        <section>
+        <!-- #region positionnement -->
+        <section class="positionnement section">
+            <h2 class="section__title">Le positionnement</h2>
+            <p>Le positionnement est aussi adaptable grâce aux 
+                <mark class="text__highlight"> logical properties.</mark>
+            Pratique non ? 
+            </p>
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region mise en situation -->
+        <section class="situation section">
+            <h2 class="section__title">Mise en situation</h2>
+            <p>Les 
+                <mark class="text__highlight"> logical properties </mark>
+            sont très utiles pour les sites qui sont traduits dans diverses langues.
+            </p>
+            <div class="situation__output">
+                <div class="situation__output__buttons">
+                    <button class="situation__output__btn" id="fr"> english </button>
+                    <button class="situation__output__btn" id="ar"> arabic <!-- عربي --></button>
+                    <button class="situation__output__btn" id="ja"> japanese <!-- 日本語 --></button>
+                    <button class="situation__output__btn" id="ch"> chinese <!-- 中国人 --></button>
+                </div>
+        
+                <div lang="fr" class="background">
+                    <p class="content">some content to fill in the void in my life</p>
+                    <div class="delimitation">
+                      <p class="footer">Bas de page</p>
+                    </div>
+                  </div>
+            </div>
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region reading -->
+        <section class="reading section">
+            <h2 class="section__title">Manipuler les sens de lecture</h2>
+            <p>Pour utiliser les logical properties, il faut quand
+               même modifier le sens de lecture des textes. Pour ce
+               faire, vous avez 
+               <a target="_blank" class="text__highlight" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">
+                l'attribut dir
+               </a> pour gauche/droite et la propriété css
+               <a target="_blank" class="text__highlight" href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">
+                writing-mode
+                </a>pour haut/bas :
+            </p>
+
+            <pre class="language-css">
+                <code>
+ &lt;p dir="rtl"&gt;Sens de lecture&lt;/p&gt;</code>
+            </pre>
+            <pre class="language-css">
+                <code>
+  .element{
+    writing-mode: vertical-rl;
+  }</code>
+            </pre>
+
+            <div class="reading__output">
+                <p> &lt;p dir="ltr"&gt;</p>
+                <div class="reading__output__exemple">
+                    <span class="reading__output__exempleItem"></span>
+                </div>
+                <p> &lt;p dir="rtl"&gt;</p>
+                <div class="reading__output__exemple" dir="rtl">
+                    <span class="reading__output__exempleItem"></span>
+                </div>
+            </div>
+
+            <div class="reading__output">
+                <div>
+                    <p>.element{
+                        writing-mode: vertical-rl;
+                    };</p>
+                    <div class="reading__output__exemple2">
+                        <span class="reading__output__exempleItem"></span>
+                    </div>
+                </div>
+                <div>
+                    <p>.element{
+                        writing-mode: vertical-rl;
+                    }</p>
+                    <div class="reading__output__exemple2">
+                        <span class="reading__output__exempleItem"></span>
+                    </div>
+                </div>
+            </div>
+
 
         </section>
+        <!-- #endregion -->
 
         <!--#region test des webcomponents  -->
-        <section class="test">
+        <section class="test" style="display:none;">
         <div>
             <button id="fr"> french </button>
             <button id="ar"> arabic </button>
@@ -120,7 +213,7 @@
           </div>
         </section>
 
-        <section class="test">
+        <section class="test" style="display:none;">
             <template id="content-lang">
                 <style>
                     ::slotted(div){
@@ -156,7 +249,7 @@
 
             <content-lang>
                 <div slot="container">
-                    <bdi>some KCJPOFEJPEFPJ to fill in the void in my life</bdi>
+                    <bdi>some REZESDEFOJI to fill in the void in my life</bdi>
                     <p slot="footer">Bas de page</p>
                 </div>
             </content-lang>
