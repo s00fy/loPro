@@ -14,14 +14,6 @@
      url(../fonts/Outfit-VariableFont_wght.ttf);
 }
 
-/* @font-face {
-    font-family: "Outfit";
-    src:
-     local("Outfit"),
-     url(../fonts/Outfit-ExtraBold.ttf);
-     font-weight: bold;
-} */
-
 :root{
     /* SCSS HEX */
     --mindaro: #ceec97ff;
@@ -36,6 +28,7 @@
     --rose-quartz: #9a8c98ff;
     --pale-dogwood: #c9ada7ff;
     --isabelline: #f2e9e4ff;
+    --blue: #29627e;
 
     --title-font: Young Serif;
     --font: Outfit;
@@ -48,6 +41,7 @@
 }
 /* #endregion */
 
+/* #region contenu général */
 .body{
     display: flex;
     justify-content: center;
@@ -60,7 +54,6 @@ h1, h2, h3{
     font-family: var(--title-font);
 }
 
-/* #region contenu principal */
 .main{
     background-color: #f5f5f5;    
     max-width: 800px;
@@ -75,10 +68,6 @@ code{
     padding: 1rem;
     border-radius: 3px; */
 }
-
-/* #endregion */
-
-/* #region contentDir */
 .section{
     padding: 2rem 0;
     display: flex;
@@ -89,6 +78,31 @@ code{
 .section__title{
     font-size: 1.5rem;
 }
+
+.text__highlight{
+    background-color: var(--isabelline);
+    border-radius: 2px;
+    /* text-decoration: none; */
+    color: var(--english-violet);
+}
+
+.text__lowlight{
+    font-style: italic;
+    font-weight: 500;
+}
+
+aside {
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    box-shadow: inset 6px 0 2px -5px var(--blue);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--blue);
+  }
+
+/* #endregion */
+
+/* #region contentDir */
 
 .exemple__container{
     background-color: var(--isabelline);
@@ -155,22 +169,10 @@ code{
 }
 /* #endregion */
 
-/* #region contenu pour le test de components */
-
-.text__highlight{
-    background-color: var(--isabelline);
-    border-radius: 2px;
-    /* text-decoration: none; */
-    color: var(--english-violet);
-}
-
-.text__lowlight{
-    font-style: italic;
-    font-weight: 500;
-}
+/* #region content lang */
 
 .background{
-    background: #F6c54e;
+    background: #e0c78b;
     inline-size: 130px;
     block-size: 180px;
     padding: 5px;
@@ -181,6 +183,7 @@ code{
     border-start-end-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+    text-align: justify;
 }
 
 .delimitation{
@@ -193,13 +196,19 @@ code{
 .footer{
     font-style:italic;
     color: purple;
+    padding-block: 5px;
 }
 
-  /* #endregion */
-
-slot[name=delimitation]{
-    background-color: red;
+.vertical__ch{
+    writing-mode: vertical-lr;
 }
+.vertical__ja{
+    writing-mode: vertical-rl;
+}
+.vertical__reset{
+    writing-mode: inherit;
+}
+/* #endregion */
 
 /* #region reading */
 
@@ -226,14 +235,13 @@ slot[name=delimitation]{
     margin: 30px 0;
     display: flex;
     align-items: center;
-    height: 25px;
-    width: 80vw;
+    inline-size: 16rem;
+    block-size: 25px;
     background-color: var(--mindaro);
 }
 
 .reading__output__exemple2{
-    height: 80px;
-    width: 25px;
+    writing-mode:vertical-lr;
 }
 
 .reading__output__exemple::before,
@@ -260,12 +268,8 @@ slot[name=delimitation]{
 .reading__output__exemple::before, .reading__output__exemple2::before
 {
     content: 'start';
-    right: auto;
+    inset-inline-end: auto;
     inset-inline-start: -10px;
-}
-
-.reading__output__exemple2{
-    writing-mode: horizontal-tb;
 }
 
 .reading__output__exempleItem

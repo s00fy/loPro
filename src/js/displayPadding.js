@@ -1,24 +1,36 @@
 class DisplayPadding extends HTMLElement {
-    constructor() {
-        super();
-
-        this.attachShadow({ mode: "open" });
-        const template = document.getElementById("display-padding").content;
-        this.shadowRoot.appendChild(template.cloneNode(true));
-        if (template) {
-
-            this.containers = document.querySelectorAll(".exemple__container");
-            let count = 0;
-            this.containers.forEach(el => {
-                if (count % 2 === 1) {
-                    el.setAttribute('dir', 'rtl');
-                }
-                count++;
-            });
-        } else {
-            console.error("Template inexistant");
+    static get observedAttributes() {
+      return ["dir"];
+    }
+    
+    attributeChangedCallback(name, oldVal, newVal) {
+        if(name === "dir" && newVal === null){
+            this.setAttribute("dir", oldVal); 
+            console.log(" new Val");
+        }
+        if (this.$title) {
+          this.render();
         }
     }
-}
 
-customElements.define("display-padding", DisplayPadding);
+    connectedCallback() {
+      this.innerHTML = `
+        <div class="exemple__container">
+            <span class="exemple__img"></span>
+            <span class="exemple__margin"></span>
+            <p class="exemple__userContent"></p>
+        </div>
+      `;
+      this.$container = this.querySelector(".exemple__container");
+      this.$title = this.querySelector(".exemple__userContent");
+  
+      this.render();
+    }
+
+    render() {
+      this.$title.innerHTML =
+        this.dir === "ltr" ? "Infos de l'utilisateur" : "إسم المستخدم";
+    }
+  }
+  
+  customElements.define("display-padding", DisplayPadding);
