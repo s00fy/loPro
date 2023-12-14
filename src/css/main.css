@@ -42,6 +42,78 @@
 /* #endregion */
 
 /* #region contenu général */
+h1{
+    view-timeline: --subjectReveal block;
+    animation-timeline: --subjectReveal;
+  
+    margin-top: 55vh;
+    animation-name: title;
+    animation-fill-mode: both;
+    animation-duration: 1ms; 
+    transition: all 3ms ease-in;
+  }
+span, aside, p, h2, h3, mark, div, pre, code, button, a, li
+{
+  view-timeline: --subjectReveal block;
+  animation-timeline: --subjectReveal;
+
+  animation-name: appear;
+  animation-fill-mode: both;
+  animation-duration: 1ms; 
+  transition: all 3ms ease-in;
+}
+
+.hero__small{
+    view-timeline: --subjectReveal block;
+    animation-timeline: --subjectReveal;
+  
+    animation-name: hop;
+    animation-fill-mode: both;
+    animation-duration: 1ms; 
+    transition: all 3ms ease-in;
+}
+
+@keyframes title {
+    0%, 30% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    60%{
+        opacity: 1;
+    }
+    85%{
+        opacity: 1;
+        transform: scale(1);
+    }
+  }
+@keyframes appear {
+    0%, 15% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    30% {
+        opacity: 1;
+        transform: translateX(3%);
+    }
+    50%{
+        transform: translateX(0);
+    }
+  }
+@keyframes hop{
+    0%, 30% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(5%);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+
 .body{
     display: flex;
     justify-content: center;
