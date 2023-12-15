@@ -10,7 +10,7 @@
     <script src="src/js/content.js" type="text/javascript" defer></script>
     <script src="src/js/displayPadding.js" type="text/javascript" defer></script>
     <script src="src/js/notification.js" type="text/javascript" defer></script>
-    <script src="src/js/sw.js" type="text/javascript" defer></script>
+    <script src="sw.js" type="text/javascript" defer></script>
 </head>
 <body class="body">
     <header>
@@ -26,12 +26,15 @@
         <section class="tableContents">
             <span>Sommaire</span>
             <ul>
-                <li>Sens de lecture</li>
+                <li> <a href="#intro">Introduction</a></li>
+                <li> <a href="#positionnement">Le positionnement</a></li>
+                <li> <a href="#situation">Mise en situation</a></li> 
+                <li> <a href="#reading">Manipuler les sens de lecture</a></li> 
             </ul>
         </section>
         
         <!-- #region introduction -->
-        <section class="contentDir section">
+        <section id="intro" class="contentDir section">
             <h2 class="section__title">Introduction</h2>
             <p>
                 Les logical properties servent à rendre le code 
@@ -89,7 +92,7 @@
         <!-- #endregion -->
 
         <!-- #region positionnement -->
-        <section class="positionnement section">
+        <section id="positionnement" class="positionnement section">
             <h2 class="section__title">Le positionnement</h2>
             <p>Le positionnement est aussi adaptable grâce aux 
                 <mark class="text__highlight"> logical properties.</mark>
@@ -100,16 +103,21 @@
                 <button class="positionnement__button">inset: 10px 5px 20px 15px;</button>
                 <button class="positionnement__button">inset-block-start: 15px;</button>
                 <button class="positionnement__button">inset: 10px;</button>
+                <div class="positionnement__display">
+                    <div class="positionnement__display__container">
+                        <p></p>
+                    </div>
+                </div>
             </div>
 
         </section>
         <!-- #endregion -->
 
         <!-- #region mise en situation -->
-        <section class="situation section">
+        <section id="situation" class="situation section">
             <h2 class="section__title">Mise en situation</h2>
             <p>Les 
-                <mark class="text__highlight"> logical properties </mark>
+                <mark class="text__highlight"> logical properties</mark>
             sont très utiles pour les sites qui sont traduits dans diverses langues.
             Vous pouvez voir sur l'exemple ci-dessus qu'elles agissent sur les border-radius, le positionnement absolu, le padding, le border...
             </p>
@@ -119,7 +127,7 @@
         <!-- #endregion -->
 
         <!-- #region reading -->
-        <section class="reading section">
+        <section id="reading" class="reading section">
             <h2 class="section__title">Manipuler les sens de lecture</h2>
             <p>Pour utiliser les logical properties, il faut quand
                même modifier le sens de lecture des textes. Pour ce
@@ -164,8 +172,6 @@
                     </div>
                 </div>
             </div>
-
-
         </section>
         <!-- #endregion -->
 

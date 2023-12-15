@@ -398,3 +398,10 @@ aside {
     border-radius: 3px;
     padding: 10px 6px;
 }
+
+.positionnement__display__container
+{
+    border: 1px solid white;
+    height: 50px;
+    width: 50px;
+}
