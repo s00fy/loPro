@@ -2,7 +2,7 @@ class contentLang extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-        <div class="situation__output">
+        <div class="situation__output container__ex">
                 <div class="situation__output__buttons">
                     <button class="situation__output__btn" id="en"> english </button>
                     <button class="situation__output__btn" id="ar"> arabic <!-- عربي --></button>

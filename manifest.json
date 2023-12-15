@@ -55,6 +55,7 @@
     "scope": "./",
     "start_url": "./index.php",
     "display": "standalone",
+    "offline": "true",
     "theme_color": "#fc60a8ff",
     "background_color": "#f2e9e4ff"
 }

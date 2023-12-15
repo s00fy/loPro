@@ -10,6 +10,7 @@
     <script src="src/js/content.js" type="text/javascript" defer></script>
     <script src="src/js/displayPadding.js" type="text/javascript" defer></script>
     <script src="src/js/notification.js" type="text/javascript" defer></script>
+    <script src="src/js/sw.js" type="text/javascript" defer></script>
 </head>
 <body class="body">
     <header>
@@ -92,8 +93,15 @@
             <h2 class="section__title">Le positionnement</h2>
             <p>Le positionnement est aussi adaptable grâce aux 
                 <mark class="text__highlight"> logical properties.</mark>
-            Pratique non ? 
+            Pratique non ? Pour ce faire, il faut utiliser <code>inset</code> :
             </p>
+            <div class="positionnement__output container__ex">
+                <button class="positionnement__button">inset: 10px;</button>
+                <button class="positionnement__button">inset: 10px 5px 20px 15px;</button>
+                <button class="positionnement__button">inset-block-start: 15px;</button>
+                <button class="positionnement__button">inset: 10px;</button>
+            </div>
+
         </section>
         <!-- #endregion -->
 
@@ -135,7 +143,7 @@
   }</code>
             </pre>
 
-            <div class="reading__output">
+            <div class="reading__output container__ex">
                 <p> &lt;p dir="ltr"&gt;</p>
                 <div class="reading__output__exemple">
                     <span class="reading__output__exempleItem"></span>
@@ -146,7 +154,7 @@
                 </div>
             </div>
 
-            <div class="reading__output">
+            <div class="reading__output container__ex">
                 <div>
                     <p>.element{
                         writing-mode: vertical-rl;
