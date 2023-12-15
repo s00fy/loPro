@@ -88,10 +88,10 @@ class contentLang extends HTMLElement {
 
     switchJa() {
         this.$content.innerHTML = `
-        我在日我们的周年纪念日
+        おはようございます
         `;
         this.$footer.innerHTML = `
-        我在日历
+        さようなら
         `;
         this.$background.style.fontFamily = `'"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif`;
         this.$background.removeAttribute("dir");
