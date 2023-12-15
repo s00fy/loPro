@@ -26,18 +26,45 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     async function registerServiceWorker() {
         if('serviceWorker' in navigator) {
+            console.log(navigator);
             const registration = await navigator.serviceWorker.register('/sw.js');
-            console.log(registration);
             let subscription = await registration.pushManager.getSubscription();
-            console.log(JSON.stringify(subscription));
+            console.log(registration.pushManager);
+            // console.log(JSON.stringify(subscription));
             if(subscription) return;
-
-            console.log('subscribe');
             subscription = await registration.pushManager.subscribe({
                 userVisibleOnly: true,
-                applicationServerKey: ''
+                applicationServerKey: await getPublicKey(),
             })
         }
     }
+
+    async function getPublicKey() {
+        try {
+            const response = await fetch("/key", {
+                headers: {
+                    Accept: "application/json",
+                },
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+    
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                const { key } = await response.json();
+                console.log(key);
+                return key;
+            } else {
+                throw new Error('Invalid content type. Expected JSON.');
+            }
+        } catch (error) {
+            console.error('Error fetching or parsing data:', error);
+            // Handle the error or return a default value as needed
+            return null;
+        }
+    }
+
     registerServiceWorker();
 })

@@ -1,4 +1,4 @@
-/* // Choose a cache name
+// Choose a cache name
 const staticCacheName = "site-static-v2";
 const dynamicCacheName = "site-dynamic-v1";
 
@@ -23,9 +23,8 @@ const assets = [
   "/src/icons/icon-512x512.png",
 ];
 
- */
 // sw.js
-
+/* 
 const cacheFirst = async({request, fallbackUrl}) => {
     const responseFromCache = await caches.match(request);
     if (responseFromCache) {
@@ -62,4 +61,4 @@ self.addEventListener("push", (event) => {
     console.log("push event", event);
     const data = event.data;
     event.waitUntil(self.registration.showNotification("Hello world", data));
-  })
+  }) */
