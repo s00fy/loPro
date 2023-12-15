@@ -115,7 +115,7 @@ class contentLang extends HTMLElement {
     }
 
     disconnectedCallback() {
-    document.removeEventListener(this.keyDownEventListener);
+    document.removeEventListener(this.clickEventListener);
     }
     
 }

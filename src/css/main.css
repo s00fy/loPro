@@ -203,7 +203,7 @@ aside {
     background: var(--pale-dogwood);
 }
 
-.contentDir__list__link{
+.contentDir__list__link, .hero__button{
     color: var(--isabelline);
     width: fit-content;
     padding: 5px 10px;
@@ -215,7 +215,7 @@ aside {
 
 }
 
-.contentDir__list__link:focus{
+.contentDir__list__link:focus, .hero__button:focus{
     transition: all 3ms ease-in;
     color: var(--space-cadet);
     background: transparent;
@@ -224,7 +224,7 @@ aside {
 
 /* #endregion */
 
-/* #region HERO */
+/* #region hero */
 .hero{
     padding: 0.5rem 0.5rem 2rem;
     text-align: center;
@@ -237,8 +237,14 @@ aside {
 .hero__small{
     font-size: 0.8rem;
     font-style: italic;
-
 }
+
+.hero__button{
+    margin: 15px 0;
+    border: none;
+    background-color: none;
+}
+
 /* #endregion */
 
 /* #region content lang */
