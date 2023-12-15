@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
       Notification.requestPermission().then((result => {
         if(result === "granted") {
-          console.log("Notifications granted");
+          console.log("Notifications acceptées");
         }else{
           console.log("Notifications refusées");
         }

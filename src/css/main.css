@@ -34,19 +34,48 @@
     --font: Outfit;
 }
 
-/* #region menu */
+/* #region menu et sommaire */
 
-.header{
+.header{}
 
+.tableContents{
+    margin: 20px 5px;
+    padding: 20px ;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 8px;
+    background-color: var(--isabelline);
 }
+
+.tableContents__title{
+    font-family: var(--title-font);
+    font-size: 1.2rem;
+}
+
+.tableContents__itemsContainer{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.tableContents__item{
+    padding: 15px 5px 0px;
+}
+
 /* #endregion */
 
 /* #region contenu général */
+
+.link__icon{
+    height: 0.5rem;
+    color: var(--blue);
+}
+
 h1{
     view-timeline: --subjectReveal block;
     animation-timeline: --subjectReveal;
   
-    margin-top: 55vh;
+    margin-top: 60vh;
     animation-name: title;
     animation-fill-mode: both;
     animation-duration: 1ms; 
@@ -87,15 +116,15 @@ span, aside, p, h2, h3, mark, div, pre, code, button, a, li
     }
   }
 @keyframes appear {
-    0%, 15% {
+    0%, 10% {
         opacity: 0;
         transform: translateX(-100%);
     }
-    30% {
+    20% {
         opacity: 1;
         transform: translateX(3%);
     }
-    50%{
+    35%{
         transform: translateX(0);
     }
   }
@@ -136,9 +165,6 @@ h1, h2, h3{
 
 code{
     vertical-align: baseline;
-    /* background-color: #c0adad;
-    padding: 1rem;
-    border-radius: 3px; */
 }
 .section{
     padding: 2rem 0;
@@ -154,7 +180,6 @@ code{
 .text__highlight{
     background-color: var(--isabelline);
     border-radius: 2px;
-    /* text-decoration: none; */
     color: var(--english-violet);
 }
 
@@ -304,18 +329,19 @@ aside {
 }
 
 .reading__output p{
-    color: var(--isabelline);
+    color: #c3cee3;
+    font-family: monospace;
 }
 
 .reading__output__exemple, .reading__output__exemple2
 {
     position: relative;
-    margin: 30px 0;
+    margin: 30px auto;
     display: flex;
     align-items: center;
     inline-size: 16rem;
     block-size: 25px;
-    background-color: var(--mindaro);
+    background-color: #1F5768;
 }
 
 .reading__output__exemple2{
@@ -327,16 +353,17 @@ aside {
 .reading__output__exemple2::after,
 .reading__output__exemple2::before{
     content: 'end';
-    color: var(--space-cadet);
+    color: var(--isabelline);
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     height: 50px;
     width: 50px;
-    background-color: var(--peach);
     inset-block-start: -14px;
     border-radius: 25px;
+    background-image: url(../images/lilypad.svg);
+    background-size: 100% 100%;
 }
 
 .reading__output__exemple::after, .reading__output__exemple2::after{
@@ -353,9 +380,10 @@ aside {
 .reading__output__exempleItem
 {
     margin-inline-start: 50px;
-    background-color: red;
-    height: 10px;
-    width: 20px;
+    background-image: url(../images/frog.svg);
+    height: 45px;
+    width: 45px;
+    background-size: 100% 100%;
     display: block;
 }
 
@@ -383,6 +411,7 @@ aside {
 
 /* #endregion */
 
+/* #region positionnement */
 .positionnement__output{
     display: flex;
     flex-direction: column;
@@ -393,15 +422,47 @@ aside {
 .positionnement__button
 {
     border: none;
-    background: var(--pale-dogwood);
+    background: var(--isabelline);
     font-weight: 700;
     border-radius: 3px;
     padding: 10px 6px;
 }
 
+.positionnement__display
+{
+    position: relative;
+    height: 250px;
+    margin-top: 25px;
+}
+
 .positionnement__display__container
 {
-    border: 1px solid white;
-    height: 50px;
-    width: 50px;
+    border: 1px solid var(--isabelline);
+    height: 250px;
+    width: 100%;
+    position:absolute;
 }
+
+.focus__inset{
+    display: block;
+    color: var(--isabelline);
+    height: 100%;
+    width: 100%;
+}
+
+.inset_first{
+    border: 10px solid var(--pale-dogwood);
+}
+.inset_second{
+    border-top: 10px solid var(--pale-dogwood);
+    border-right: 5px solid var(--pale-dogwood);
+    border-bottom: 20px solid var(--pale-dogwood);
+    border-left: 15px solid var(--pale-dogwood);
+}
+.inset_block{
+    border-top: 15px solid var(--pale-dogwood);
+}
+.inset_inline{
+    border-right: 20px solid var(--pale-dogwood);
+}
+/* #endregion */

@@ -10,6 +10,7 @@
     <script src="src/js/content.js" type="text/javascript" defer></script>
     <script src="src/js/displayPadding.js" type="text/javascript" defer></script>
     <script src="src/js/notification.js" type="text/javascript" defer></script>
+    <script src="src/js/position.js" type="text/javascript" defer></script>
     <script src="sw.js" type="text/javascript" defer></script>
 </head>
 <body class="body">
@@ -24,12 +25,12 @@
         </section>
 
         <section class="tableContents">
-            <span>Sommaire</span>
-            <ul>
-                <li> <a href="#intro">Introduction</a></li>
-                <li> <a href="#positionnement">Le positionnement</a></li>
-                <li> <a href="#situation">Mise en situation</a></li> 
-                <li> <a href="#reading">Manipuler les sens de lecture</a></li> 
+            <span class="tableContents__title">Sommaire</span>
+            <ul class="tableContents__itemsContainer">
+                <li class="tableContents__item"> <a href="#intro">Introduction</a></li>
+                <li class="tableContents__item"> <a href="#positionnement">Le positionnement</a></li>
+                <li class="tableContents__item"> <a href="#situation">Mise en situation</a></li> 
+                <li class="tableContents__item"> <a href="#reading">Manipuler les sens de lecture</a></li> 
             </ul>
         </section>
         
@@ -98,18 +99,10 @@
                 <mark class="text__highlight"> logical properties.</mark>
             Pratique non ? Pour ce faire, il faut utiliser <code>inset</code> :
             </p>
-            <div class="positionnement__output container__ex">
-                <button class="positionnement__button">inset: 10px;</button>
-                <button class="positionnement__button">inset: 10px 5px 20px 15px;</button>
-                <button class="positionnement__button">inset-block-start: 15px;</button>
-                <button class="positionnement__button">inset: 10px;</button>
-                <div class="positionnement__display">
-                    <div class="positionnement__display__container">
-                        <p></p>
-                    </div>
-                </div>
-            </div>
 
+            <!-- Affichage de la démonstration -->
+            <position-inset></position-inset>
+ 
         </section>
         <!-- #endregion -->
 
@@ -133,10 +126,10 @@
                même modifier le sens de lecture des textes. Pour ce
                faire, vous avez 
                <a target="_blank" class="text__highlight" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">
-                l'attribut dir
+                <code>l'attribut dir <img class="link__icon" src="src/images/lien.png" alt="lien extérieur"> </code>
                </a> pour gauche/droite et la propriété css
                <a target="_blank" class="text__highlight" href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">
-                writing-mode
+                <code>writing-mode <img class="link__icon" src="src/images/lien.png" alt="lien extérieur"> </code>
                 </a>pour haut/bas :
             </p>
 
@@ -162,6 +155,8 @@
                 </div>
             </div>
 
+            <aside>Vous avez la réf ? C'est <a target="_blank" class="text__highlight" href="https://flexboxfroggy.com/#fr">flexbox froggy :)) <img class="link__icon" src="src/images/noun-link.svg" alt="lien extérieur"> </a></aside>
+
             <div class="reading__output container__ex">
                 <div>
                     <p>.element{
@@ -172,73 +167,19 @@
                     </div>
                 </div>
             </div>
+            <p>Et voilà ! Les logical properties ne sont pas un principe dures à comprendre et
+                à apprendre, mais les implémenter est une très bonne chose puisqu'elles allègent
+                (à leurs échelles...) le code mais sont aussi plus pratiques et logiques pour les développeurs;
+                il n'y a aucune raison de ne pas les adopter ;).
+            </p>
+
         </section>
         <!-- #endregion -->
-
-        <!--#region test des webcomponents  -->
-        <section class="test" style="display:none;">
-        <div>
-            <button id="fr"> french </button>
-            <button id="ar"> arabic </button>
-            <button id="ja"> japanese </button>
-            <button id="ch"> chinese </button>
-        </div>
-
-        <div lang="fr" class="background">
-            <p class="content">some content to fill in the void in my life</p>
-            <div class="delimitation">
-              <p class="footer">Bas de page</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="test" style="display:none;">
-            <template id="content-lang">
-                <style>
-                    ::slotted(div){
-                        background: #F6c54e;
-                        inline-size: 130px;
-                        block-size: 180px;
-                        padding: 5px;
-                        border-inline-start: 6px solid;
-                        padding-inline: 10px 15px;
-                        position:relative;
-                        border-end-end-radius: 10px;
-                        border-start-end-radius: 10px;
-                    }
-
-                    span{
-                        display:block;
-                        position:absolute;
-                        inset-block-end: 0;
-                        inline-size: 80px;
-                        border-block-start: 3px dotted black;
-                    }
-                    p{
-                        font-style:italic;
-                        color: purple;
-                    }
-                  </style>
-                <slot name="container"></slot>
-                <div class="delimitation">
-
-                    <slot name="footer"></slot>
-                </div>
-            </template>
-
-            <content-lang>
-                <div slot="container">
-                    <bdi>some REZESDEFOJI to fill in the void in my life</bdi>
-                    <p slot="footer">Bas de page</p>
-                </div>
-            </content-lang>
-        </section>
-        <!--#endregion -->
-
     </main>
-    
-    <footer>
 
+    <footer display="none">
+        <!-- <p>Logical properties • Fait par <a href="sophiegarreta.fr"> Sophie </a></p>
+        <a href=""></a> -->
     </footer>
 </body>
 </html>

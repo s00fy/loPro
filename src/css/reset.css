@@ -38,10 +38,16 @@ h6 {
 }
 p {
   overflow-wrap: break-word;
+  text-align:justify ;
 }
 
 ul {
   list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 button,
