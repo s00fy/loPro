@@ -1,22 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     let installPrompt;
     const pwaInstallButton = document.getElementById("installPWA");
-  
+    
     const isAppInstalled = localStorage.getItem('PWAInstalled');
     if (isAppInstalled) {
-      pwaInstallButton.setAttribute("hidden", "");
+        pwaInstallButton.setAttribute("hidden", "");
     }
-  
+
     window.addEventListener("beforeinstallprompt", (event) => {
-      installPrompt = event;
-      if (!isAppInstalled) {
-        pwaInstallButton.removeAttribute("hidden");
-      }
+        event.preventDefault();
+        installPrompt = event;
+        if (!isAppInstalled) {
+            pwaInstallButton.removeAttribute("hidden");
+        }
     });
   
     pwaInstallButton.addEventListener("click", async () => {
       if (!installPrompt) return;
-  
+      localStorage.setItem('PWAInstalled', true);  
       const result = await installPrompt.prompt();
       console.log("install prompt result", result);
   
