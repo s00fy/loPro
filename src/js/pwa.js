@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let installPrompt;
     const pwaInstallButton = document.getElementById("installPWA");
   
-    // Check if PWA is already installed using localStorage
     const isAppInstalled = localStorage.getItem('PWAInstalled');
     if (isAppInstalled) {
       pwaInstallButton.setAttribute("hidden", "");
@@ -10,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
     window.addEventListener("beforeinstallprompt", (event) => {
       installPrompt = event;
-      pwaInstallButton.removeAttribute("hidden");
+      if (!isAppInstalled) {
+        pwaInstallButton.removeAttribute("hidden");
+      }
     });
   
     pwaInstallButton.addEventListener("click", async () => {
@@ -22,13 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
       Notification.requestPermission().then((result => {
         if (result === "granted") {
           console.log("Notifications acceptées");
+          // Update flag when the installation prompt is accepted
+          localStorage.setItem('PWAInstalled', true);
         } else {
           console.log("Notifications refusées");
         }
       }));
-  
-      // Set flag indicating PWA has been installed in localStorage
-      localStorage.setItem('PWAInstalled', true);
   
       installPrompt = null;
       pwaInstallButton.setAttribute("hidden", "");
