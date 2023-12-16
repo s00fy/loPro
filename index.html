@@ -9,8 +9,9 @@
     <link rel="manifest" href="manifest.json" />
     <script src="src/js/contentLang.js" type="text/javascript" defer></script>
     <script src="src/js/displayPadding.js" type="text/javascript" defer></script>
-    <script src="src/js/pwa.js" type="text/javascript" defer></script>
     <script src="src/js/positionInset.js" type="text/javascript" defer></script>
+    <script src="src/js/directionRead.js" type="text/javascript" defer></script>
+    <script src="src/js/pwa.js" type="text/javascript" defer></script>
     <script src="src/js/scrollAnim.js" type="text/javascript" defer></script>
     <script src="sw.js" type="text/javascript" defer></script>
 </head>
@@ -45,6 +46,9 @@
                 Elles permettent aux éléments de suivre le sens
                 de lecture assigné par la langue utilisée.
             </p>
+            <aside>Attention, c'est une propriété qui est encore en phase de "test", 
+                il se peut que certaines propriétés ne soient pas supportées partout !
+            </aside>
             <!-- Hop là petite démonstration à l'aide d'un web components -->
             <display-padding dir="ltr"></display-padding>
             <display-padding dir="rtl"></display-padding>
@@ -55,13 +59,13 @@
             <!-- Le code qu'il aurait fallu mettre sans -->
             <pre class="language-css">
                 <code>
-    .avatar {
-        margin-right: 1rem;
+    <span class="css-selector">.avatar</span> {
+    <span class="css-property">margin-right:</span> <span class="css-value">1rem</span>;
     }
 
-    html[dir="rtl"] .avatar {
-        margin-right: 0;
-        margin-left: 1rem;
+    <span class="css-selector">html[dir="rtl"] .avatar</span> {
+        <span class="css-property">margin-right:</span> <span class="css-value">0</span>;
+        <span class="css-property">margin-left:</span> <span class="css-value">1rem</span>;
     }</code>
             </pre>
             <!-- Le code qu'on peut mettre avec -->
@@ -70,8 +74,8 @@
             </p>
             <pre class="language-css">
                 <code>
-    .avatar {
-        margin-inline-end: 1rem;
+    <span class="css-selector">.avatar</span> {
+        <span class="css-property">margin-inline-end:</span> <span class="css-value">1rem</span>;
     }</code>
             </pre>
             <p class="contentDir__list">
@@ -137,32 +141,26 @@
 
             <pre class="language-css">
                 <code>
- &lt;p dir="rtl"&gt;Sens de lecture&lt;/p&gt;</code>
+<span class="html-tag"> &lt;p</span> <span class="html-attr">dir="rtl"</span><span class="html-tag">&gt; </span>Sens de lecture<span class="html-tag">&lt;/p&gt;</span></code>
             </pre>
             <pre class="language-css">
                 <code>
-  .element{
-    writing-mode: vertical-rl;
+  <span class="css-selector">.element</span>{
+    <span class="css-property">writing-mode</span>: <span class="css-value">vertical-rl</span>;
   }</code>
             </pre>
 
             <div class="reading__output container__ex">
-                <p> &lt;p dir="ltr"&gt;</p>
-                <div class="reading__output__exemple">
-                    <span class="reading__output__exempleItem"></span>
-                </div>
-                <p> &lt;p dir="rtl"&gt;</p>
-                <div class="reading__output__exemple" dir="rtl">
-                    <span class="reading__output__exempleItem"></span>
-                </div>
+                <direction-read></direction-read>
+                <direction-read></direction-read>
             </div>
 
             <aside>Vous avez la référence ? C'est <a target="_blank" class="text__highlight" href="https://flexboxfroggy.com/#fr">flexbox froggy :)) <img class="link__icon" src="src/images/noun-link.svg" alt="lien extérieur"> </a></aside>
 
             <div class="reading__output container__ex">
                 <code class="reading__output__code">
-  .element{
-    writing-mode: vertical-rl;
+  <span class="css-selector">.element</span>{
+    <span class="css-property">writing-mode</span>: <span class="css-value">vertical-rl</span>;
   };</code class="reading__output__code">
                 <div class="reading__output__exemple2">
                     <span class="reading__output__exempleItem"></span>
@@ -180,7 +178,7 @@
 
     <footer class="footer">
         <p class="footer__text">Logical properties • Fait par <a target="_blank" class="footer__link" href="sophiegarreta.fr">Sophie</a></p>
-        <p class="footer__text"> © All rights reserved</p>
+        <p class="footer__text"> <a href="/rights.html"> © All rights reserved ?</a></p>
     </footer>
 </body>
 </html>

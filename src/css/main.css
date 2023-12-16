@@ -1,40 +1,24 @@
 @import url(./reset.css);
 
-@font-face {
-    font-family: "Young Serif";
-    src:
-     local("Young Serif"),
-     url(../fonts/YoungSerif-Regular.ttf);
-}
-
-@font-face {
-    font-family: "Outfit";
-    src:
-     local("Outfit"),
-     url(../fonts/Outfit-VariableFont_wght.ttf);
-}
-
-:root{
-    /* SCSS HEX */
-    --mindaro: #ceec97ff;
-    --peach: #f4b393ff;
-    --hot-pink: #fc60a8ff;
-    --french-violet: #7a28cbff;
-    --english-violet: #494368ff;
-    --yellow: #FFFDBF;
-
-    --space-cadet: #22223bff;
-    --ultra-violet: #4a4e69ff;
-    --rose-quartz: #9a8c98ff;
-    --pale-dogwood: #c9ada7ff;
-    --isabelline: #f2e9e4ff;
-    --blue: #29627e;
-
-    --title-font: Young Serif;
-    --font: Outfit;
-}
 /* #region menu et sommaire */
 
+.header
+{
+    position: absolute;
+    height:80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+.header__text
+{
+    font-size: 1.4rem;
+    white-space: pre;
+    color: #c3cee3;
+}
 .tableContents{
     margin: 20px 5px;
     padding: 20px ;
@@ -62,15 +46,6 @@
 /* #endregion */
 
 /* #region contenu général */
-
-html{
-    scroll-behavior: smooth;
-}
-
-.link__icon{
-    height: 0.5rem;
-    color: var(--blue);
-}
 
 span, aside, p, h2, h3, mark, div, pre, code, button, a, li, .hero__small,
 h1, .footer, .footer__text, .footer__link
@@ -152,24 +127,8 @@ h1{
     }
   }
 
-.body{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: var(--font);
-    font-weight: normal;
-    font-size: 1rem;
-}
-
 h1, h2, h3{
     font-family: var(--title-font);
-}
-
-.main{
-    background-color: #f5f5f5;    
-    max-width: 800px;
-    padding: 1.5rem;
-    border-radius: 15px;
 }
 
 code{
@@ -205,6 +164,16 @@ aside {
     font-size: 0.8rem;
     color: var(--blue);
   }
+
+.css-selector{
+    color: #f07178;
+}
+.css-property, .html-tag{
+    color: #80cbc4;
+}
+.css-value,.html-attr{
+    color: #FB9070;
+}
 
 /* #endregion */
 
@@ -503,21 +472,3 @@ aside {
 }
 
 /* #endregion */
-
-.header
-{
-    position: absolute;
-    height:80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    width: 100vw;
-}
-.header__text
-{
-    font-size: 1.4rem;
-    white-space: pre;
-    color: #c3cee3;
-}

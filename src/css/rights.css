@@ -1,0 +1,55 @@
+@import url(reset.css);
+
+.main
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1{
+    padding: 25px 0;
+    font-size: 2.4rem;
+    font-family: var(--title-font);
+}
+
+.back{
+    color: var(--isabelline);
+    width: fit-content;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 16px;
+    background: var(--space-cadet);
+    border: unset;
+    transition: all 3ms ease-in;
+}
+.main__links{
+    padding: 20px ;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 8px;
+    background-color: var(--isabelline);
+}
+
+li{
+    padding: 10px;
+}
+
+.footer{
+    height: 160px;
+    background-color: #263238;
+    padding: 40px 15px;
+    color: var(--isabelline);
+}
+
+.footer p{
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer__link{
+    color: var(--isabelline);
+}
+
+

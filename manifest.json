@@ -56,6 +56,6 @@
     "start_url": "./index.html",
     "display": "standalone",
     "offline": "true",
-    "theme_color": "#fc60a8ff",
-    "background_color": "#f2e9e4ff"
+    "theme_color": "#f2e9e4ff",
+    "background_color": "#22223bff"
 }

@@ -6,10 +6,12 @@ const dynamicCacheName = "site-dynamic-v1";
 const assets = [
   "/index.html",
   "/offline.html",
-  "/manifest.json",
+  "/rights.html",
   "/sw.js",
+  "/manifest.json",
   "/src/css/main.css",
   "/src/css/reset.css",
+  "/src/css/rights.css",
   "/src/fonts/Outfit-VariableFont_wght.ttf",
   "/src/fonts/YounxgSerif-Regular.ttf",
   "/src/icons/icon-48x48.png",
@@ -25,11 +27,13 @@ const assets = [
   "/src/images/lilypad.svg",
   "/src/images/noun-link.svg",
   "/src/js/contentLang.js",
+  "/src/js/directionRead.js",
   "/src/js/displayPadding.js",
   "/src/js/positionInset.js",
   "/src/js/pwa.js",
   "/src/js/scrollAnim.js",
 ];
+
 // Service Worker Installation Event
 self.addEventListener('install', event => {
     // Precache static assets
