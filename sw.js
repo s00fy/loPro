@@ -5,11 +5,10 @@ const dynamicCacheName = "site-dynamic-v1";
 // List the files to precache
 const assets = [
   "/index.html",
+  "/manifest.json",
+  "/sw.js",
   "/src/css/main.css",
   "/src/css/reset.css",
-  "/src/js/content.js",
-  "/src/js/displayPadding.js",
-  "/src/js/exemple.js",
   "/src/fonts/Outfit-VariableFont_wght.ttf",
   "/src/fonts/YounxgSerif-Regular.ttf",
   "/src/icons/icon-48x48.png",
@@ -21,6 +20,14 @@ const assets = [
   "/src/icons/icon-192x192.png",
   "/src/icons/icon-384x384.png",
   "/src/icons/icon-512x512.png",
+  "/src/images/frog.svg",
+  "/src/images/lilypad.svg",
+  "/src/images/noun-link.svg",
+  "/src/js/contentLang.js",
+  "/src/js/displayPadding.js",
+  "/src/js/positionInset.js",
+  "/src/js/pwa.js",
+  "/src/js/scrollAnim.js",
 ];
 
 // sw.js

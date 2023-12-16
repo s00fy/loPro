@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       installPrompt = null;
       pwaInstallButton.setAttribute("hidden", "");
     })
-
+/* 
     async function registerServiceWorker() {
         if('serviceWorker' in navigator) {
             console.log(navigator);
@@ -66,5 +66,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     }
 
-    registerServiceWorker();
+    registerServiceWorker(); */
 })

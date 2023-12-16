@@ -9,13 +9,14 @@
     <link rel="manifest" href="manifest.json" />
     <script src="src/js/contentLang.js" type="text/javascript" defer></script>
     <script src="src/js/displayPadding.js" type="text/javascript" defer></script>
-    <script src="src/js/notification.js" type="text/javascript" defer></script>
+    <script src="src/js/pwa.js" type="text/javascript" defer></script>
     <script src="src/js/positionInset.js" type="text/javascript" defer></script>
     <script src="src/js/scrollAnim.js" type="text/javascript" defer></script>
     <script src="sw.js" type="text/javascript" defer></script>
 </head>
 <body class="body">
-    <header>
+    <header class="header">
+        <p class="header__text">↓ scroll :) ↓ </p>
     </header>
     
     <main class="main">
@@ -159,13 +160,12 @@
             <aside>Vous avez la référence ? C'est <a target="_blank" class="text__highlight" href="https://flexboxfroggy.com/#fr">flexbox froggy :)) <img class="link__icon" src="src/images/noun-link.svg" alt="lien extérieur"> </a></aside>
 
             <div class="reading__output container__ex">
-                <div>
-                    <p>.element{
-                        writing-mode: vertical-rl;
-                    };</p>
-                    <div class="reading__output__exemple2">
-                        <span class="reading__output__exempleItem"></span>
-                    </div>
+                <code class="reading__output__code">
+  .element{
+    writing-mode: vertical-rl;
+  };</code class="reading__output__code">
+                <div class="reading__output__exemple2">
+                    <span class="reading__output__exempleItem"></span>
                 </div>
             </div>
             <p>Et voilà ! Les logical properties ne sont pas un principe dur à comprendre et
@@ -179,8 +179,8 @@
     </main>
 
     <footer class="footer">
-        <p class="footer__text">Logical properties • Fait par <a class="footer__link" href="sophiegarreta.fr">Sophie</a></p>
-        <p> © All rights reserved</p>
+        <p class="footer__text">Logical properties • Fait par <a target="_blank" class="footer__link" href="sophiegarreta.fr">Sophie</a></p>
+        <p class="footer__text"> © All rights reserved</p>
     </footer>
 </body>
 </html>

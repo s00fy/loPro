@@ -35,8 +35,6 @@
 }
 /* #region menu et sommaire */
 
-.header{}
-
 .tableContents{
     margin: 20px 5px;
     padding: 20px ;
@@ -75,15 +73,19 @@ html{
 }
 
 span, aside, p, h2, h3, mark, div, pre, code, button, a, li, .hero__small,
-h1, .footer, .footer__text 
+h1, .footer, .footer__text, .footer__link
 {
     view-timeline: --subjectReveal block;
     animation-timeline: --subjectReveal;
     
-    animation-name: appear;
     animation-fill-mode: both;
     animation-duration: 1ms; 
     transition: all 3ms ease-in;
+}
+
+span, aside, p, h2, h3, mark, div, pre, code, button, li
+{
+    animation-name: appear;
 }
 h1{
     margin-top: 60vh;
@@ -94,7 +96,7 @@ h1{
     animation-name: hop;
 }
 
-.footer, .footer__text{
+.footer, .footer__text, .footer__link{
     animation-name: footer;    
 }
 
@@ -417,6 +419,12 @@ aside {
     background-color: var(--isabelline);
 }
 
+.reading__output__code
+{
+    color: #c3cee3;
+    white-space: pre;
+}
+
 /* #endregion */
 
 /* #region positionnement */
@@ -495,3 +503,21 @@ aside {
 }
 
 /* #endregion */
+
+.header
+{
+    position: absolute;
+    height:80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+.header__text
+{
+    font-size: 1.4rem;
+    white-space: pre;
+    color: #c3cee3;
+}
