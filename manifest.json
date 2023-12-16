@@ -53,7 +53,7 @@
       ],
     "description": "Découvrez les logical properties",
     "scope": "./",
-    "start_url": "./index.php",
+    "start_url": "./index.html",
     "display": "standalone",
     "offline": "true",
     "theme_color": "#fc60a8ff",
