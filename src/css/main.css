@@ -157,7 +157,7 @@ h1{
     justify-content: center;
     flex-direction: column;
     font-family: var(--font);
-    font-weight: 700;
+    font-weight: normal;
     font-size: 1rem;
 }
 
