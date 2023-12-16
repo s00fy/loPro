@@ -57,24 +57,30 @@ self.addEventListener('install', event => {
   
   // Service Worker Fetch Event
   self.addEventListener('fetch', event => {
+    const { request } = event;
+  
+    // Skip caching resources with unsupported schemes
+    if (request.url.startsWith('chrome-extension://')) {
+      return;
+    }
+  
     event.respondWith(
-      caches.match(event.request).then(cacheRes => {
+      caches.match(request).then(cacheRes => {
         return (
           cacheRes ||
-          fetch(event.request).then(fetchRes => {
+          fetch(request).then(fetchRes => {
             return caches.open(dynamicCacheName).then(cache => {
-              cache.put(event.request.url, fetchRes.clone());
+              cache.put(request, fetchRes.clone());
               return fetchRes;
             });
           })
         );
       }).catch(() => {
-        // Fallback to a offline page if both cache and network fail
         return caches.match('/offline.html');
       })
     );
   });
-
+  
 // sw.js
 /* 
 const cacheFirst = async({request, fallbackUrl}) => {
