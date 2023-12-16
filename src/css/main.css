@@ -33,7 +33,6 @@
     --title-font: Young Serif;
     --font: Outfit;
 }
-
 /* #region menu et sommaire */
 
 .header{}
@@ -66,40 +65,48 @@
 
 /* #region contenu général */
 
+html{
+    scroll-behavior: smooth;
+}
+
 .link__icon{
     height: 0.5rem;
     color: var(--blue);
 }
 
-h1{
+span, aside, p, h2, h3, mark, div, pre, code, button, a, li, .hero__small,
+h1, .footer, .footer__text 
+{
     view-timeline: --subjectReveal block;
     animation-timeline: --subjectReveal;
-  
-    margin-top: 60vh;
-    animation-name: title;
+    
+    animation-name: appear;
     animation-fill-mode: both;
     animation-duration: 1ms; 
     transition: all 3ms ease-in;
-  }
-span, aside, p, h2, h3, mark, div, pre, code, button, a, li
-{
-  view-timeline: --subjectReveal block;
-  animation-timeline: --subjectReveal;
-
-  animation-name: appear;
-  animation-fill-mode: both;
-  animation-duration: 1ms; 
-  transition: all 3ms ease-in;
+}
+h1{
+    margin-top: 60vh;
+    animation-name: title;
 }
 
 .hero__small{
-    view-timeline: --subjectReveal block;
-    animation-timeline: --subjectReveal;
-  
     animation-name: hop;
-    animation-fill-mode: both;
-    animation-duration: 1ms; 
-    transition: all 3ms ease-in;
+}
+
+.footer, .footer__text{
+    animation-name: footer;    
+}
+
+@keyframes footer{
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    1% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes title {
@@ -116,13 +123,13 @@ span, aside, p, h2, h3, mark, div, pre, code, button, a, li
     }
   }
 @keyframes appear {
-    0%, 10% {
+    0%, 15% {
         opacity: 0;
         transform: translateX(-100%);
     }
-    20% {
+    25% {
         opacity: 1;
-        transform: translateX(3%);
+        transform: translateX(2.5%);
     }
     35%{
         transform: translateX(0);
@@ -146,6 +153,7 @@ span, aside, p, h2, h3, mark, div, pre, code, button, a, li
 .body{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     font-family: var(--font);
     font-weight: 700;
     font-size: 1rem;
@@ -158,7 +166,6 @@ h1, h2, h3{
 .main{
     background-color: #f5f5f5;    
     max-width: 800px;
-    width:800px;
     padding: 1.5rem;
     border-radius: 15px;
 }
@@ -256,12 +263,13 @@ aside {
 }
 
 .hero__title{
-    font-size: 3.3rem;
+    font-size: 3.1rem;
     padding: 1rem;
 }
 .hero__small{
     font-size: 0.8rem;
     font-style: italic;
+    text-align: center;
 }
 
 .hero__button{
@@ -296,7 +304,7 @@ aside {
     inline-size: 80px;
     border-block-start: 3px dotted black;
 }
-.footer{
+.situation__footer{
     font-style:italic;
     color: purple;
     padding-block: 5px;
@@ -412,6 +420,7 @@ aside {
 /* #endregion */
 
 /* #region positionnement */
+
 .positionnement__output{
     display: flex;
     flex-direction: column;
@@ -465,4 +474,24 @@ aside {
 .inset_inline{
     border-right: 20px solid var(--pale-dogwood);
 }
+/* #endregion */
+
+/* #region footer */
+
+.footer{
+    height: 160px;
+    background-color: #263238;
+    padding: 40px 15px;
+    color: var(--isabelline);
+}
+
+.footer p{
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer__link{
+    color: var(--isabelline);
+}
+
 /* #endregion */

@@ -7,10 +7,11 @@
     <title>Logical properties</title>
     <link href="src/css/main.css" rel="stylesheet" type="text/css" />
     <link rel="manifest" href="manifest.json" />
-    <script src="src/js/content.js" type="text/javascript" defer></script>
+    <script src="src/js/contentLang.js" type="text/javascript" defer></script>
     <script src="src/js/displayPadding.js" type="text/javascript" defer></script>
     <script src="src/js/notification.js" type="text/javascript" defer></script>
-    <script src="src/js/position.js" type="text/javascript" defer></script>
+    <script src="src/js/positionInset.js" type="text/javascript" defer></script>
+    <script src="src/js/scrollAnim.js" type="text/javascript" defer></script>
     <script src="sw.js" type="text/javascript" defer></script>
 </head>
 <body class="body">
@@ -75,11 +76,11 @@
             <p class="contentDir__list">
                 Les logical properties influent sur le : 
                 <span class="text__lowlight">
+                    positionnement
                     margin
                     padding
                     sizing
-                    border-radius
-                    positionnement...
+                    border-radius...
                 </span>
             </p>
             <a class="contentDir__list__link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#reference" target="_blank">
@@ -155,7 +156,7 @@
                 </div>
             </div>
 
-            <aside>Vous avez la réf ? C'est <a target="_blank" class="text__highlight" href="https://flexboxfroggy.com/#fr">flexbox froggy :)) <img class="link__icon" src="src/images/noun-link.svg" alt="lien extérieur"> </a></aside>
+            <aside>Vous avez la référence ? C'est <a target="_blank" class="text__highlight" href="https://flexboxfroggy.com/#fr">flexbox froggy :)) <img class="link__icon" src="src/images/noun-link.svg" alt="lien extérieur"> </a></aside>
 
             <div class="reading__output container__ex">
                 <div>
@@ -167,8 +168,8 @@
                     </div>
                 </div>
             </div>
-            <p>Et voilà ! Les logical properties ne sont pas un principe dures à comprendre et
-                à apprendre, mais les implémenter est une très bonne chose puisqu'elles allègent
+            <p>Et voilà ! Les logical properties ne sont pas un principe dur à comprendre et
+                à apprendre. Leur implémentation est une très bonne chose puisqu'elles allègent
                 (à leurs échelles...) le code mais sont aussi plus pratiques et logiques pour les développeurs;
                 il n'y a aucune raison de ne pas les adopter ;).
             </p>
@@ -177,9 +178,9 @@
         <!-- #endregion -->
     </main>
 
-    <footer display="none">
-        <!-- <p>Logical properties • Fait par <a href="sophiegarreta.fr"> Sophie </a></p>
-        <a href=""></a> -->
+    <footer class="footer">
+        <p class="footer__text">Logical properties • Fait par <a class="footer__link" href="sophiegarreta.fr">Sophie</a></p>
+        <p> © All rights reserved</p>
     </footer>
 </body>
 </html>

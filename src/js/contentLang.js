@@ -13,14 +13,14 @@ class contentLang extends HTMLElement {
                 <div lang="en" class="background">
                     <p class="content"></p>
                     <div class="delimitation">
-                      <p class="footer"></p>
+                      <p class="situation__footer"></p>
                     </div>
                   </div>
             </div>
         `;
         this.$buttons = this.querySelector('.situation__output__buttons');
         this.$content = this.querySelector('.content');
-        this.$footer = this.querySelector('.footer');
+        this.$footer = this.querySelector('.situation__footer');
         this.$background = this.querySelector('.background');
 
         this.$en = this.querySelector('#en');
