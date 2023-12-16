@@ -5,6 +5,7 @@ const dynamicCacheName = "site-dynamic-v1";
 // List the files to precache
 const assets = [
   "/index.html",
+  "/offline.html",
   "/manifest.json",
   "/sw.js",
   "/src/css/main.css",
@@ -29,69 +30,50 @@ const assets = [
   "/src/js/pwa.js",
   "/src/js/scrollAnim.js",
 ];
-
-
-// install event
-self.addEventListener("install", (evt) => {
-    console.log("service worker installed");
-    evt.waitUntil(
-      caches.open(staticCacheName).then((cache) => {
-        console.log("caching shell assets");
+// Service Worker Installation Event
+self.addEventListener('install', event => {
+    // Precache static assets
+    event.waitUntil(
+      caches.open(staticCacheName).then(cache => {
+        console.log('Caching shell assets');
         cache.addAll(assets);
       })
     );
   });
   
-  // activate event
-  self.addEventListener("activate", (evt) => {
-    console.log("service worker activated");
-    evt.waitUntil(
-      caches.keys().then((keys) => {
-        //console.log(keys);
+  // Service Worker Activation Event
+  self.addEventListener('activate', event => {
+    event.waitUntil(
+      // Clearing old caches
+      caches.keys().then(keys => {
         return Promise.all(
           keys
-            .filter((key) => key !== staticCacheName)
-            .map((key) => caches.delete(key))
+            .filter(key => key !== staticCacheName && key !== dynamicCacheName)
+            .map(key => caches.delete(key))
         );
       })
     );
   });
   
-  // fetch event
-  self.addEventListener("fetch", (evt) => {
-    // check if request is made by chrome extensions or web page
-    // if request is made for web page url must contains http.
-    if (!(evt.request.url.indexOf("http") === 0)) return; // skip the request. if request is not made with http protocol
-  
-    evt.respondWith(
-      caches
-        .match(evt.request)
-        .then(
-          (cacheRes) =>
-            cacheRes ||
-            fetch(evt.request).then((fetchRes) =>
-              caches.open(dynamicCacheName).then((cache) => {
-                cache.put(evt.request.url, fetchRes.clone());
-                // check cached items size
-                limitCacheSize(dynamicCacheName, 75);
-                return fetchRes;
-              })
-            )
-        )
-        .catch(() => caches.match("/fallback.html"))
+  // Service Worker Fetch Event
+  self.addEventListener('fetch', event => {
+    event.respondWith(
+      caches.match(event.request).then(cacheRes => {
+        return (
+          cacheRes ||
+          fetch(event.request).then(fetchRes => {
+            return caches.open(dynamicCacheName).then(cache => {
+              cache.put(event.request.url, fetchRes.clone());
+              return fetchRes;
+            });
+          })
+        );
+      }).catch(() => {
+        // Fallback to a offline page if both cache and network fail
+        return caches.match('/offline.html');
+      })
     );
   });
-  
-  // cache size limit function
-  const limitCacheSize = (name, size) => {
-    caches.open(name).then((cache) => {
-      cache.keys().then((keys) => {
-        if (keys.length > size) {
-          cache.delete(keys[0]).then(limitCacheSize(name, size));
-        }
-      });
-    });
-  };
 
 // sw.js
 /* 
